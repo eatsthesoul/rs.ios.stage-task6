@@ -220,4 +220,40 @@ class CoronaClassTests: XCTestCase {
         seat15 = coronaClass.seat()
         XCTAssertEqual(coronaClass.seats, [0, 6, 12, 18, 24, 30, 36, 42, 49, 55, 61, 74, 86, 99])
     }
+    
+    func test15() {
+        coronaClass = CoronaClass(n: 7)
+        seat0 = coronaClass.seat()
+        seat1 = coronaClass.seat()
+        seat2 = coronaClass.seat()
+        seat3 = coronaClass.seat()
+        seat4 = coronaClass.seat()
+        seat5 = coronaClass.seat()
+        seat6 = coronaClass.seat()
+        coronaClass.leave(6)
+        coronaClass.leave(1)
+        coronaClass.leave(2)
+        coronaClass.leave(3)
+        coronaClass.leave(4)
+        seat7 = coronaClass.seat()
+        XCTAssertEqual(coronaClass.seats, [0, 2, 5])
+    }
+
+    func test16() {
+        coronaClass = CoronaClass(n: 7)
+        seat0 = coronaClass.seat()
+        seat1 = coronaClass.seat()
+        seat2 = coronaClass.seat()
+        seat3 = coronaClass.seat()
+        seat4 = coronaClass.seat()
+        seat5 = coronaClass.seat()
+        seat6 = coronaClass.seat()
+        coronaClass.leave(0)
+        coronaClass.leave(1)
+        coronaClass.leave(3)
+        coronaClass.leave(4)
+        coronaClass.leave(5)
+        seat7 = coronaClass.seat()
+        XCTAssertEqual(coronaClass.seats, [0, 2, 6])
+    }
 }
